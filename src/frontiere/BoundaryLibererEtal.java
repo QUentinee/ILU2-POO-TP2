@@ -14,8 +14,11 @@ public class BoundaryLibererEtal {
 			System.out.println("Mais vous netes pas isncrit sur notre marché aujourd'hui !");
 		}
 		else {
-			controlLibererEtal.libererEtal(nomVendeur);
-			
+			String[] donneesEtal;
+			donneesEtal = controlLibererEtal.libererEtal(nomVendeur);
+			System.out.println("Vous avez vendu " + donneesEtal[4] + " sur "
+					+ donneesEtal[3] + "" + donneesEtal[2] + ".");
+			System.out.println("En revoir " + nomVendeur + ", passez une bonne journée.");
 		}
 	}
 
