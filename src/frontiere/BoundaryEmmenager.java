@@ -44,6 +44,6 @@ public class BoundaryEmmenager {
 	}
 
 	private void emmenagerDruide(String nomVisiteur) {
-		//TODO a completer
+		controlEmmenager.ajouterDruide(nomVisiteur, 0, 0, 0);
 	}
 }
