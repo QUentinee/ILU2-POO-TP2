@@ -40,6 +40,6 @@ public class BoundaryPrendreEtal {
 	}
 
 	private void installerVendeur(String nomVendeur) {
-		//TODO a completer
+		
 	}
 }
