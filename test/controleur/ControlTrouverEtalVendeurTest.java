@@ -20,7 +20,6 @@ class ControlTrouverEtalVendeurTest {
 		village = new Village("le village", 20, 8);
 		chef = new Chef("chef",20, village);
 		village.setChef(chef);
-		Etal etal = new Etal();
 		Gaulois gaulois = new Gaulois("Jean", 8);
 		village.installerVendeur(gaulois, "Tables", 4);
 	}
@@ -34,7 +33,16 @@ class ControlTrouverEtalVendeurTest {
 
 	@Test
 	void testTrouverEtalVendeur() {
-		
+		ControlTrouverEtalVendeur control = new ControlTrouverEtalVendeur(village);
+		Etal etal2 = control.trouverEtalVendeur("Jean");
+		String nom = etal2.getVendeur().getNom();
+//		int quantite = etal2.getQuantite();
+//		String prod = etal2.getProduit();
+		assertEquals("Jean", nom);
+//		assert(4 != quantite);
+//		assertNotEquals("c'est pas égal", "Tables", prod);
+//		System.out.println("Trouve l'etal comme il faut\n");
+
 	}
 
 }

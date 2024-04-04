@@ -20,7 +20,6 @@ class ControlAfficherMarcheTest {
 		village = new Village("le village", 20, 8);
 		chef = new Chef("chef",20, village);
 		village.setChef(chef);
-		Etal etal = new Etal();
 		Gaulois gaulois = new Gaulois("Jean", 8);
 		village.installerVendeur(gaulois, "Tables", 4);
 	}
@@ -29,7 +28,7 @@ class ControlAfficherMarcheTest {
 	void testControlAfficherMarche() {
 		ControlAfficherMarche controlaffichermarche = new ControlAfficherMarche(village);
 		assertNotNull(controlaffichermarche, "le marche est nul");
-		System.out.println("afficherMarche");
+		System.out.println("afficherMarche\n");
 	}
 
 	@Test
@@ -40,7 +39,7 @@ class ControlAfficherMarcheTest {
 		assertNotEquals("Le tableau n'est pas bon ", "Jean", lesinfos[0]);
 		assertNotEquals("Le tableau n'est pas bon", 4, lesinfos[1]);
 		assertNotEquals("Le tableau n'est pas bon", "Tables", lesinfos[2]);
-		System.out.println("DonnerInfosMarche");
+		System.out.println("DonnerInfosMarche\n");
 	}
 
 }
