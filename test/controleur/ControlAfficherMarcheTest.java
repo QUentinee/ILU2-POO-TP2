@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import personnages.Chef;
+import personnages.Gaulois;
 import villagegaulois.Etal;
 import villagegaulois.Village;
 
@@ -19,12 +20,16 @@ class ControlAfficherMarcheTest {
 		village = new Village("le village", 20, 8);
 		chef = new Chef("chef",20, village);
 		village.setChef(chef);
+		Etal etal = new Etal();
+		Gaulois gaulois = new Gaulois("Jean", 8);
+		village.installerVendeur(gaulois, "Tables", 4);
 	}
 
 	@Test
 	void testControlAfficherMarche() {
 		ControlAfficherMarche controlaffichermarche = new ControlAfficherMarche(village);
 		assertNotNull(controlaffichermarche, "le marche est nul");
+		System.out.println("afficherMarche");
 	}
 
 	@Test
@@ -32,6 +37,10 @@ class ControlAfficherMarcheTest {
 		ControlAfficherMarche control = new ControlAfficherMarche(village);
 		String[] lesinfos = control.donnerInfosMarche();
 		assertNotNull(lesinfos, "ca marche pas");
+		assertNotEquals("Le tableau n'est pas bon ", "Jean", lesinfos[0]);
+		assertNotEquals("Le tableau n'est pas bon", 4, lesinfos[1]);
+		assertNotEquals("Le tableau n'est pas bon", "Tables", lesinfos[2]);
+		System.out.println("DonnerInfosMarche");
 	}
 
 }
